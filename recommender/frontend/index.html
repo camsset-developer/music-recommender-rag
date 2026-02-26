@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎵 Music Recommender</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>🎵 Music Recommender</h1>
+            <p class="subtitle">Descubre música similar basada en IA</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Tabs de búsqueda -->
+        <div class="tabs">
+            <button class="tab-button active" data-tab="name">
+                🔍 Por Nombre
+            </button>
+            <button class="tab-button" data-tab="semantic">
+                🧠 Por Concepto
+            </button>
+        </div>
+
+        <!-- Búsqueda por nombre -->
+        <div id="name-search" class="tab-content active">
+            <div class="search-box">
+                <input 
+                    type="text" 
+                    id="trackNameInput" 
+                    placeholder="Ej: Die With A Smile, Billie Eilish, etc."
+                    autocomplete="off"
+                >
+                <button id="searchByNameBtn" class="btn-primary">
+                    Buscar
+                </button>
+                <button id="clearNameBtn" class="btn-secondary">
+                    🗑️ Limpiar
+                </button>
+            </div>
+            
+            <!-- Sugerencias -->
+            <div id="suggestions" class="suggestions"></div>
+        </div>
+
+        <!-- Búsqueda semántica -->
+        <div id="semantic-search" class="tab-content">
+            <div class="search-box">
+                <input 
+                    type="text" 
+                    id="semanticInput" 
+                    placeholder="Ej: canciones tristes, música alegre, pop romántico..."
+                    autocomplete="off"
+                >
+                <button id="searchSemanticBtn" class="btn-primary">
+                    Buscar
+                </button>
+                <button id="clearSemanticBtn" class="btn-secondary">
+                    🗑️ Limpiar
+                </button>
+            </div>
+
+            <div class="examples">
+                <p><strong>Ejemplos:</strong></p>
+                <div class="example-tags">
+                    <span class="tag" data-query="canciones tristes">😢 Tristes</span>
+                    <span class="tag" data-query="música alegre">😊 Alegre</span>
+                    <span class="tag" data-query="romántico">❤️ Romántico</span>
+                    <span class="tag" data-query="música para bailar">💃 Para bailar</span>
+                    <span class="tag" data-query="pop femenino">👩‍🎤 Pop femenino</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading spinner -->
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Buscando canciones similares...</p>
+        </div>
+
+        <!-- Error message -->
+        <div id="error" class="error hidden"></div>
+
+        <!-- Resultados -->
+        <div id="results" class="results">
+            <!-- Los resultados se insertarán aquí dinámicamente -->
+        </div>
+
+        <!-- Paginación -->
+        <div id="pagination" class="pagination hidden">
+            <button id="prevPage" class="page-btn">
+                ← Anterior
+            </button>
+            <span id="pageInfo" class="page-info"></span>
+            <button id="nextPage" class="page-btn">
+                Siguiente →
+            </button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>
+                Powered by <strong>Vertex AI</strong> + <strong>BigQuery</strong>
+                | 
+                <a href="http://localhost:8000/docs" target="_blank">API Docs</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

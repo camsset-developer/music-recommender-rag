@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Logs
+*.log
+logs/
+
+# Tests
+tests/
+*.test.py
+
+# Documentation
+README.md
+*.md
+
+# Frontend (no se necesita en la API)
+frontend/
+
+# Otros módulos del proyecto
+ingestion/
+transformation/
+embeddings/
+dbt/

@@ -1,0 +1,11 @@
+# Embeddings Pipeline Requirements
+pandas>=2.0.0
+numpy>=1.24.0
+google-cloud-bigquery>=3.11.0
+google-cloud-aiplatform>=1.38.0
+python-dotenv>=1.0.0
+scikit-learn>=1.3.0
+db-dtypes>=1.1.1
+
+# Opcional: Si quieres usar Pinecone en vez de Vertex AI Vector Search
+# pinecone-client>=2.2.0
